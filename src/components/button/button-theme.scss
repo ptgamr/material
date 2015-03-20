@@ -82,8 +82,14 @@ md-toolbar .md-button.md-THEME_NAME-theme.md-fab {
   &[disabled],
   &.md-raised[disabled],
   &.md-fab[disabled] {
-    color: '{{foreground-3}}';
-    background-color: transparent;
+    color: '{{foreground-2}}';
     cursor: not-allowed;
+  }
+  &.md-raised[disabled],
+  &.md-fab[disabled] {
+    background-color: '{{foreground-4}}';
+  }
+  &[disabled] {
+    background-color: 'transparent';
   }
 }
