@@ -129,9 +129,11 @@ $button-fab-toast-offset: $button-fab-height * 0.75;
   &:not([disabled]) {
     &.md-raised,
     &.md-fab {
-      &:focus,
-      &:hover {
         transform: translate3d(0, -1px, 0);
+      &:focus {
+        @extend .md-shadow-bottom-z-1;
+      }
+      &:active {
         @extend .md-shadow-bottom-z-2;
       }
     }
