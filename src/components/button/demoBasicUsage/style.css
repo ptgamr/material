@@ -10,9 +10,8 @@ md-content {
   margin-right: 7px;
 }
 section .md-button {
-  display: block;
-  margin: 1em;
-  line-height: 25px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .label {
   position: absolute;
