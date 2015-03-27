@@ -22,7 +22,7 @@
     self.matches = [];
     self.loading = false;
     self.hidden = true;
-    self.index = 0;
+    self.index = -1;
     self.keydown = keydown;
     self.blur = blur;
     self.clear = clearValue;
@@ -77,7 +77,7 @@
     }
 
     function handleSearchText (searchText, previousSearchText) {
-      self.index = 0;
+      self.index = -1;
       //-- do nothing on init if there is no initial value
       if (!searchText && searchText === previousSearchText) return;
       //-- clear selected item if search text no longer matches it
@@ -167,14 +167,14 @@
             updateSelectionMessage();
             break;
         case $mdConstant.KEY_CODE.ENTER:
-            if (self.loading || self.index < 0) return;
+            if (self.loading || self.index < -1) return;
             event.preventDefault();
             select(self.index);
             break;
         case $mdConstant.KEY_CODE.ESCAPE:
             self.matches = [];
             self.hidden = true;
-            self.index = 0;
+            self.index = -1;
             break;
         case $mdConstant.KEY_CODE.TAB:
             break;
@@ -206,7 +206,7 @@
       $scope.selectedItem = self.matches[index];
       $scope.searchText = getDisplayValue($scope.selectedItem) || $scope.searchText;
       self.hidden = true;
-      self.index = 0;
+      self.index = -1;
       self.matches = [];
     }
 
