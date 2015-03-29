@@ -71,7 +71,7 @@
         if (selectedItem) {
           $scope.searchText = getDisplayValue(selectedItem);
         }
-        if ($scope.itemChange && selectedItem !== previousSelectedItem)
+        if ($scope.itemChange && selectedItem && selectedItem !== previousSelectedItem)
           $scope.itemChange(getItemScope(selectedItem));
       });
     }
@@ -208,6 +208,10 @@
       self.hidden = true;
       self.index = -1;
       self.matches = [];
+
+      if (!$scope.selectedItem && $scope.itemChange) {
+        $scope.itemChange();
+      }
     }
 
     function updateScroll () {
