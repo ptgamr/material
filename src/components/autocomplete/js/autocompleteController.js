@@ -42,9 +42,9 @@
 
     //-- start method definitions
     function init () {
-      if ($scope.autofocus) elements.input.focus();
       configureWatchers();
       $timeout(gatherElements);
+      if ($scope.autofocus) $timeout(function() {elements.input.focus();});
     }
 
     function gatherElements () {
