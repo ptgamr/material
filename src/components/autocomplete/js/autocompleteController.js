@@ -79,7 +79,7 @@
     function handleSearchText (searchText, previousSearchText) {
       self.index = -1;
       //-- do nothing on init if there is no initial value
-      if (!searchText && searchText === previousSearchText) return;
+      if (!searchText || searchText === previousSearchText) return;
       //-- clear selected item if search text no longer matches it
       if (searchText !== getDisplayValue($scope.selectedItem)) $scope.selectedItem = null;
       else return;
